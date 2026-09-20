@@ -1,0 +1,36 @@
+name: Build CV PDF
+
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install PDF renderer
+        run: npm install --no-save --no-package-lock playwright@1.55.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Render PDF
+        run: node scripts/render-pdf.cjs
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf
+          path: CV-Jeronimo-Herdoiza_Cloud-DevOps-Infrastructure.pdf
+          if-no-files-found: error
