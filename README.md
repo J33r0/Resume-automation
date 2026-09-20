@@ -18,7 +18,7 @@ Open `cv.html` directly in a browser. The document is also formatted for A4 prin
 
 ## Automatic PDF build
 
-Every push starts the `Build CV PDF` GitHub Actions workflow. The workflow renders `cv.html` with Chromium and uploads `CV-Jeronimo-Herdoiza_Cloud-DevOps-Infrastructure.pdf` as the `cv-pdf` artifact.
+Every push starts the `Build CV PDF` GitHub Actions workflow. The workflow renders `cv.html` with Chromium, commits the generated `CV-Jeronimo-Herdoiza_Cloud-DevOps-Infrastructure.pdf` to the repository, and uploads it as the `cv-pdf` artifact.
 
 To download it, open the completed workflow run on GitHub and download the artifact from the **Artifacts** section.
 

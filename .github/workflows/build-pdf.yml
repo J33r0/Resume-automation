@@ -4,7 +4,7 @@ on:
   push:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-pdf:
@@ -27,6 +27,19 @@ jobs:
 
       - name: Render PDF
         run: node scripts/render-pdf.cjs
+
+      - name: Commit generated PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CV-Jeronimo-Herdoiza_Cloud-DevOps-Infrastructure.pdf
+
+          if git diff --cached --quiet; then
+            echo "PDF is unchanged"
+          else
+            git commit -m "chore: update generated CV PDF"
+            git push
+          fi
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
