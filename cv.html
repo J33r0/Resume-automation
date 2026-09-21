@@ -27,17 +27,15 @@
   <!-- PROFIL -->
   <section class="profile">
     <h2>Profil</h2>
-    <p>Étudiant en Master SIRIS à l'Université de Strasbourg, orienté Cloud, DevOps et systèmes distribués. Expérience en automatisation avec Docker, Ansible, Bash et Python, ainsi qu'en réseaux 5G/BGP. Recherche un stage de 6 mois à partir de février 2027.</p>
+    <p>Étudiant en Master SIRIS à l'Université de Strasbourg, spécialisé en Cloud, DevOps et intégration de systèmes. Expérience dans la construction de pipelines CI/CD (GitHub Actions, GitLab CI/CD) qui font transiter des données et des artefacts entre outils : registres d'images, orchestrateurs, brokers de messages ; complétée par des travaux en réseaux 5G/BGP. Recherche un stage de 6 mois à partir de février 2027.</p>
   </section>
 
   <!-- COMPÉTENCES TECHNIQUES -->
   <section>
     <h2>Compétences techniques</h2>
-    <div class="skill-category"><strong>Conteneurs &amp; Orchestration :</strong> Docker, Kubernetes</div>
-    <div class="skill-category"><strong>CI/CD &amp; Automatisation :</strong> Ansible, Bash/Shell, GitHub Actions, GitLab CI/CD</div>
-    <div class="skill-category"><strong>Observabilité :</strong> Prometheus, Grafana</div>
-    <div class="skill-category"><strong>Systèmes &amp; Réseaux :</strong> Linux, Git (GitHub, GitLab), BGP, 5G, TCP/IP, APIs REST</div>
-    <div class="skill-category"><strong>Programmation :</strong> Python, C/C++, SQL</div>
+    <div class="skill-category"><strong>Cloud, Conteneurs &amp; CI/CD :</strong> Docker, Kubernetes, Ansible, Bash/Shell, GitHub Actions, GitLab CI/CD</div>
+    <div class="skill-category"><strong>Systèmes, Réseaux &amp; Observabilité :</strong> Linux, Git (GitHub, GitLab), BGP, 5G, TCP/IP, Prometheus, Grafana</div>
+    <div class="skill-category"><strong>Programmation &amp; Intégration :</strong> Python, C/C++, SQL, APIs REST, JSON, YAML</div>
   </section>
 
   <!-- EXPÉRIENCES PROFESSIONNELLES -->
@@ -53,7 +51,7 @@
       <ul>
         <li>Orchestration et automatisation du déploiement d'un générateur de trafic 5G sur le testbed POWDER.</li>
         <li>Réduction à zéro des interventions manuelles lors de l'exécution des pipelines à distance et de la récupération des métriques.</li>
-        <li><strong>Dockerisation</strong> du générateur de trafic et développement d'un runner en <strong>Bash</strong> pour automatiser la résolution d'IP et la collecte de logs, avec un backend d'orchestration piloté via une interface web.</li>
+        <li><strong>Dockerisation</strong> du générateur de trafic et développement d'un runner en <strong>Bash</strong> pour automatiser la résolution d'IP et la collecte de logs, à partir de fichiers de configuration <strong>YAML</strong>, avec un backend d'orchestration (Python) piloté via une interface web.</li>
       </ul>
     </div>
 
@@ -105,8 +103,8 @@
       <ul>
         <li>Conception et déploiement d'une infrastructure <strong>Kubernetes</strong> haute disponibilité sur trois machines virtuelles pour une application distribuée.</li>
         <li>Provisioning automatisé avec <strong>Ansible</strong>, cluster <strong>k3s</strong> multi-serveur avec etcd, secrets chiffrés via Ansible Vault et exposition réseau HA avec keepalived/VRRP et Traefik.</li>
-        <li>Création d'une pipeline <strong>GitHub Actions</strong> pour construire et publier les images <strong>Docker</strong> sur GHCR, puis déployer automatiquement l'application.</li>
-        <li>Intégration de RabbitMQ (AMQPS) pour la communication API/worker et d'un stockage <strong>S3</strong>-compatible pour les images.</li>
+        <li>Création d'une pipeline <strong>GitHub Actions</strong> interagissant avec le registre d'artefacts <strong>GHCR</strong> (publication d'images <strong>Docker</strong> taguées) puis déclenchant le déploiement automatique de l'application.</li>
+        <li>Intégration de RabbitMQ (AMQPS) comme bus de messages inter-services et d'un stockage <strong>S3</strong>-compatible (accès via API) pour les images.</li>
       </ul>
     </div>
 
