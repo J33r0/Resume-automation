@@ -25,25 +25,35 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Render PDF
+      - name: Render PDF fr
         run: node scripts/render-pdf.cjs
+
+      - name: Render PDF en
+        run: node scripts/render-pdf.cjs en
 
       - name: Commit generated PDF
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CV-Jeronimo-Herdoiza_Cloud-DevOps-Infrastructure.pdf
+          git add CV-FR-Jeronimo-Herdoiza.pdf
+          git add CV-EN-Jeronimo-Herdoiza.pdf
 
           if git diff --cached --quiet; then
             echo "PDF is unchanged"
           else
-            git commit -m "chore: update generated CV PDF"
+            git commit -m "chore: update generated CV PDFs"
             git push
           fi
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
-          name: cv-pdf
-          path: CV-Jeronimo-Herdoiza_Cloud-DevOps-Infrastructure.pdf
+          name: cv-fr-pdf
+          path: CV-FR-Jeronimo-Herdoiza.pdf
+          if-no-files-found: error
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-en-pdf
+          path: CV-EN-Jeronimo-Herdoiza.pdf
           if-no-files-found: error

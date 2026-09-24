@@ -3,8 +3,13 @@ const { pathToFileURL } = require('node:url');
 const { chromium } = require('playwright');
 
 const projectRoot = path.resolve(__dirname, '..');
-const inputFile = path.join(projectRoot, 'cv.html');
-const outputFile = path.join(projectRoot, 'CV-Jeronimo-Herdoiza_Cloud-DevOps-Infrastructure.pdf');
+const inputFileFR = path.join(projectRoot, 'cv-fr.html');
+const inputFileEN = path.join(projectRoot, 'cv-en.html');
+const outputFileFR = path.join(projectRoot, 'CV-FR-Jeronimo-Herdoiza.pdf');
+const outputFileEN = path.join(projectRoot, 'CV-EN-Jeronimo-Herdoiza.pdf');
+
+const inputFile = process.argv[2] === 'en' ? inputFileEN : inputFileFR;
+const outputFile = process.argv[2] === 'en' ? outputFileEN : outputFileFR;
 
 async function renderPdf() {
   const browser = await chromium.launch({ headless: true });
