@@ -20,7 +20,10 @@ async function renderPdf() {
     await page.emulateMedia({ media: 'print' });
     await page.pdf({
       path: outputFile,
+      format: 'A4',
+      scale: 1,
       printBackground: true,
+      displayHeaderFooter: false,
       preferCSSPageSize: true,
     });
   } finally {
