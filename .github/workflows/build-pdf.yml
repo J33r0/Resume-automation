@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: 24
 
+      - name: Install Roboto font
+        run: sudo apt-get update && sudo apt-get install -y fonts-roboto
+
       - name: Install PDF renderer
         run: npm install --no-save --no-package-lock playwright@1.55.0
 
