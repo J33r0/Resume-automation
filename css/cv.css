@@ -13,6 +13,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 9pt;
   line-height: 1.25;
+  text-align: justify;
   color: #1e293b;
   background: #ffffff;
 }
@@ -127,6 +128,27 @@ h2 {
   font-size: 7.8pt;
   color: #1e293b;
   font-style: italic;
+}
+
+.education-degree {
+  margin: 3px 0 3px 8px;
+  padding-left: 7px;
+  border-left: 2px solid #cbd5e1;
+}
+
+.education-details,
+.education-courses,
+.education-specialization {
+  font-size: 7.8pt;
+  color: #475569;
+}
+
+.education-courses {
+  margin-top: 1px;
+}
+
+.education-specialization {
+  margin: 3px 0 0 8px;
 }
 
 ul {
