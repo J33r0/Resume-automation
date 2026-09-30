@@ -22,8 +22,8 @@ jobs:
       - name: Install PDF renderer
         run: npm install --no-save --no-package-lock playwright@1.55.0
 
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Install Google Chrome
+        run: npx playwright install --with-deps chrome
 
       - name: Render PDF fr
         run: node scripts/render-pdf.cjs

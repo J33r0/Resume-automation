@@ -12,7 +12,10 @@ const inputFile = process.argv[2] === 'en' ? inputFileEN : inputFileFR;
 const outputFile = process.argv[2] === 'en' ? outputFileEN : outputFileFR;
 
 async function renderPdf() {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({
+    channel: 'chrome',
+    headless: true,
+  });
 
   try {
     const page = await browser.newPage();
