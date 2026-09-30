@@ -17,13 +17,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
       - name: Install PDF renderer
         run: npm install --no-save --no-package-lock playwright@1.55.0
 
       - name: Install Google Chrome
         run: npx playwright install --with-deps chrome
+
+      - name: Check Chrome version
+        run: google-chrome --version
 
       - name: Render PDF fr
         run: node scripts/render-pdf.cjs
